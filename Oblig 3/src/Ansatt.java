@@ -12,6 +12,19 @@ public class Ansatt extends Kort implements Fast {
 		this.aarAnsiennitet = aarAnsiennitet;
 	}
 	
+	public Ansatt(String navn, int pin, int kortNr, boolean sperretKort,
+					double timeLonn, int aarAnsiennitet) {
+		super(navn, pin, kortNr, sperretKort);
+		this.timeLonn = timeLonn;
+		this.aarAnsiennitet = aarAnsiennitet;
+	}
+	
+	public Ansatt clone() {
+		Ansatt k = new Ansatt(this.hentFulltNavn(), this.hentPin(), this.hentKortNr(),
+								this.hentSperretKort(), timeLonn, aarAnsiennitet);
+		return k;
+	}
+	
 	public void settForNavn(String forNavn) { super.settForNavn(forNavn); }
 	public String hentForNavn() { return super.hentForNavn(); }
 	

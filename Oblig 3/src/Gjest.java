@@ -13,6 +13,20 @@ public class Gjest extends Kort {
 		datoUtgaar.setDate(datoUtgaar.getDate() + 7);
 	}
 	
+	public Gjest(String navn, int pin, int kortNr, boolean sperretKort,
+					Date dato, Date datoUtgaar) {
+		super(navn, pin, kortNr, sperretKort);
+		this.dato = dato;
+		this.datoUtgaar = datoUtgaar;
+	}
+	
+	public Gjest clone() {
+		Gjest g = new Gjest(this.hentFulltNavn(), this.hentPin(),
+							this.hentKortNr(), this.hentSperretKort(),
+							(Date)dato.clone(), (Date)datoUtgaar.clone());
+		return g;
+	}
+	
 	public Boolean sjekkPin(int pin) {
 		Date now = new Date();
 		

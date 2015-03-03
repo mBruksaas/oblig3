@@ -1,5 +1,5 @@
 
-abstract class Kort {
+abstract class Kort implements Comparable<Kort>, Cloneable {
 	private String forNavn;
 	private String etterNavn;
 	private int pin;
@@ -7,12 +7,40 @@ abstract class Kort {
 	private static int nesteKortNr = 1;
 	private boolean sperretKort;
 	
+	public abstract Kort clone();
+	public int hentPin() { return pin; }
+	public int hentKortNr() { return kortNr; }
+	public boolean hentSperretKort() { return sperretKort; }
+	
+	public Kort(String navn, int pin, int kortNr, boolean sperretKort) {
+		this.settFulltNavn(navn);
+		this.pin = pin;
+		this.kortNr = kortNr;
+		this.sperretKort = sperretKort;
+	}
+	
 	public Kort(String navn, int pin) {
 		this.settFulltNavn(navn);
 		this.pin = pin;
 		kortNr = nesteKortNr;
 		nesteKortNr++;
 		sperretKort = false;
+	}
+	
+	public int compareTo(Kort k) {
+		if(etterNavn.compareTo(k.hentEtterNavn()) > 0) {
+			return 1;
+		} else if(etterNavn.compareTo(k.hentEtterNavn()) < 0) {
+			return -1;
+		} else {
+			if(forNavn.compareTo(k.hentForNavn()) > 0) {
+				return 1;
+			} else if(forNavn.compareTo(k.hentForNavn()) < 0) {
+				return -1;
+			} else {
+				return 0;
+			}
+		}
 	}
 	
 	public void settForNavn(String forNavn) { this.forNavn = forNavn; }
