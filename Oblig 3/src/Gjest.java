@@ -6,8 +6,8 @@ public class Gjest extends Kort {
 	private Date datoUtgaar;
 	
 	@SuppressWarnings("deprecation")
-	public Gjest(String forNavn, String etterNavn) {
-		super(forNavn, etterNavn, pin);
+	public Gjest(String navn) {
+		super(navn, pin);
 		dato = new Date();
 		datoUtgaar = (Date) dato.clone();
 		datoUtgaar.setDate(datoUtgaar.getDate() + 7);

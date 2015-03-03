@@ -6,8 +6,8 @@ public class TestKort {
         
         ArrayList<Kort> reg = new ArrayList<Kort>();
         
-        Kort k1 = new Ansatt("Ole", "Olsen", 1234);
-        Kort k2 = new Gjest("Marit", "Olsen");
+        Kort k1 = new Ansatt("Ole Olsen", 1234, 149.5, 6);
+        Kort k2 = new Gjest("Marit Olsen");
         reg.add(k1);
         reg.add(k2);
         
