@@ -4,7 +4,7 @@ abstract class Kort {
 	private String etterNavn;
 	private int pin;
 	private int kortNr;
-	private int nesteKortNr = 1;
+	private static int nesteKortNr = 1;
 	private boolean sperretKort;
 	
 	public Kort(String forNavn, String etterNavn, int pin) {
