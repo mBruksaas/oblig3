@@ -1,5 +1,5 @@
 
-public class Kort {
+abstract class Kort {
 	private String forNavn;
 	private String etterNavn;
 	private int pin;
