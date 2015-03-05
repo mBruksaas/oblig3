@@ -1,3 +1,6 @@
+/* Grunnklasse for videre bruk av 'Gjest'- og 'Ansatt'klassene.
+ * Fungerer som en metode for å lagre navn, pin, kortnummer
+ * om kortet er sperret eller ikke. */
 
 abstract class Kort implements Comparable<Kort>, Cloneable {
 	private String forNavn;

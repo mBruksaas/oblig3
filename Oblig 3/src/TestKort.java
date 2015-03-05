@@ -1,3 +1,5 @@
+/*Testklasse for sub-klassene av 'Kort'. */
+
 import java.util.ArrayList;
 
 public class TestKort {
